@@ -1,0 +1,4 @@
+* Define a container for the game objects (double buffered to be able to handle graphics and game logic in parallel?)
+* Actually implement the graphics library
+* Implement game logic
+* Implement user input
