@@ -1,0 +1,2 @@
+#define CPlusPlusSnake_VERSION_MAJOR @CPlusPlusSnake_VERSION_MAJOR@
+#define CPlusPlusSnake_VERSION_MINOR @CPlusPlusSnake_VERSION_MINOR@
