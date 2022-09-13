@@ -19,10 +19,14 @@ namespace zaolahma
 
         const char getAppearance() const;
 
+        const Vector& getPos() const;
+
         protected:
 
         private:
+        //Ugly hack for providing unique object ids.
         static uint16_t sCurrentId;
+
         const uint16_t mObjectId;
         const char mAppearance;
         Vector mPos;

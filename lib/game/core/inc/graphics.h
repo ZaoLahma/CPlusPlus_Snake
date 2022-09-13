@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include <task.h>
+#include <string>
 
 namespace zaolahma
 {
@@ -23,6 +24,9 @@ namespace zaolahma
 
         private:
         const GameContainer& mGameContainer;
+
+        // Graphics memory buf
+        std::string mGraphicsBuf;
     };
 }
 

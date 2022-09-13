@@ -24,4 +24,9 @@ namespace zaolahma
     {
         return mAppearance;
     }
+
+    const Vector& GameObject::getPos() const
+    {
+        return mPos;
+    }
 }
