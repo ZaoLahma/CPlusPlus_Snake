@@ -10,7 +10,7 @@ namespace zaolahma
         std::cout<<"Task "<<mTaskName<<" created"<<std::endl;
     }
 
-    std::string Task::getTaskName()
+    const std::string Task::getTaskName() const
     {
         return mTaskName;
     }
@@ -25,8 +25,6 @@ namespace zaolahma
         if ((now - mPrevExecutionTime) >= mTaskPeriodicityMS)
         {
             mPrevExecutionTime = now;
-
-            std::cout<<"Task executing at "<<mPrevExecutionTime<<std::endl;
 
             execute(now);
         }

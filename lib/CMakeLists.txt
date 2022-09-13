@@ -1,2 +1,2 @@
-add_subdirectory(graphics)
 add_subdirectory(runtime)
+add_subdirectory(game)

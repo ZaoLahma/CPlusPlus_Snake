@@ -12,7 +12,9 @@ namespace zaolahma
         Task() = delete;
         Task(const std::string taskName, const uint16_t taskPeriodicityMS);
 
-        std::string getTaskName();
+        virtual ~Task() = default;
+
+        const std::string getTaskName() const;
 
         const uint16_t getTaskPeriodicity() const;
 

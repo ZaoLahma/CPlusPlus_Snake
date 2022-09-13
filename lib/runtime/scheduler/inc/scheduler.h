@@ -3,7 +3,7 @@
 
 #include <task.h>
 #include <vector>
-#include <memory>
+#include <functional>
 
 namespace zaolahma
 {
@@ -13,12 +13,12 @@ namespace zaolahma
         public:
         Scheduler() = default;
 
-        void registerTask(std::unique_ptr<Task> task);
+        void registerTask(Task& task);
 
-        void run();
+        void run() const;
 
         protected:
-        std::vector<std::unique_ptr<Task>> mTasks;
+        std::vector<std::reference_wrapper<Task>> mTasks;
 
         private:
 

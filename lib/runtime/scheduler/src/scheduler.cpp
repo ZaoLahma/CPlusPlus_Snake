@@ -7,10 +7,10 @@
 
 namespace zaolahma
 {
-    void Scheduler::registerTask(std::unique_ptr<Task> task)
+    void Scheduler::registerTask(Task& task)
     {
-        std::cout<<"Registered task: "<<task->getTaskName()<<std::endl;
-        mTasks.push_back(std::move(task));
+        std::cout<<"Registered task: "<<task.getTaskName()<<std::endl;
+        mTasks.push_back(task);
     }
 
     /**
@@ -21,7 +21,7 @@ namespace zaolahma
      * thread to sleep in some clever way given that 
      * information.
      */
-    void Scheduler::run()
+    void Scheduler::run() const
     {
         while(true)
         {
@@ -29,14 +29,14 @@ namespace zaolahma
                 std::chrono::duration_cast<std::chrono::milliseconds>
                     (std::chrono::high_resolution_clock::now().time_since_epoch()).count();
 
-            for (auto const& task : mTasks)
+            for (auto& task : mTasks)
             {
                 auto now = std::chrono::duration_cast<std::chrono::milliseconds>
                     (std::chrono::high_resolution_clock::now().time_since_epoch()).count();
                 
-                task->run(now);
+                task.get().run(now);
             }
-            
+
             uint64_t after =
                 std::chrono::duration_cast<std::chrono::milliseconds>
                     (std::chrono::high_resolution_clock::now().time_since_epoch()).count();
